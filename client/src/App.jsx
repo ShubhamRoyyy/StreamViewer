@@ -1,7 +1,7 @@
 import "./styles/Layout.css";
 
 import Header from "./components/Header/Header";
-import Card from "./components/Card/Card";
+import Card from "./components/Common/Card/Card";
 
 function App() {
   return (

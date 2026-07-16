@@ -1,0 +1,17 @@
+:root{
+
+    --radius-sm:12px;
+
+    --radius-md:18px;
+
+    --radius-lg:24px;
+
+    --shadow:
+
+        0px 6px 18px rgba(0,0,0,.35);
+
+    --transition:
+
+        .25s ease;
+
+}

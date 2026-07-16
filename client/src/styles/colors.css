@@ -1,0 +1,31 @@
+:root{
+
+    /* Background */
+
+    --bg:#07080D;
+
+    --surface:#10131D;
+
+    --surface-2:#151924;
+
+    /* Borders */
+
+    --border:#2A2F3A;
+
+    /* Brand */
+
+    --purple:#9146FF;
+
+    --red:#FF0000;
+
+    --green:#22C55E;
+
+    --yellow:#F4A300;
+
+    /* Text */
+
+    --text:#FFFFFF;
+
+    --text-secondary:#AEB4C2;
+
+}

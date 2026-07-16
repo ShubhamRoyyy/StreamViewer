@@ -6,28 +6,146 @@
 
     align-items:center;
 
+    margin-bottom:22px;
+
 }
 
-.title{
+.header-left{
 
-    font-size:28px;
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.logo-box{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#8B5CF6,#6D28D9);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    box-shadow:0 0 20px rgba(145,70,255,.25);
+
+}
+
+.title-group h1{
+
+    font-size:1.85rem;
+
+    font-weight:700;
+
+    letter-spacing:-.5px;
+
+}
+
+.header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.status-pill{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 16px;
+
+    border-radius:14px;
+
+    background:#12321E;
+
+    color:#2BE45B;
+
+    font-weight:600;
+
+    font-size:.92rem;
+
+}
+
+.status-dot{
+
+    width:9px;
+
+    height:9px;
+
+    border-radius:50%;
+
+    background:#2BE45B;
+
+    box-shadow:0 0 8px #2BE45B;
+
+}
+
+.icon-button{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#161A24;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.2s;
+
+}
+
+.icon-button:hover{
+
+    background:#1F2432;
+
+}
+
+.avatar{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:#55248F;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
 
     font-weight:700;
 
     color:white;
-
-}
-
-.connected{
-
-    background:#12311F;
-
-    color:#3AE56A;
-
-    padding:10px 16px;
-
-    border-radius:12px;
-
-    font-weight:600;
 
 }

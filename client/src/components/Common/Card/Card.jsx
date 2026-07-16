@@ -1,61 +1,54 @@
 import "./Card.css";
 
 function Card({
+  icon,
+  title,
+  subtitle,
+  value,
+  type = "status",
+  borderColor,
+  background,
+}) {
+  return (
+    <div
+      className="card"
+      style={{
+        borderColor,
+        background,
+      }}
+    >
+      <div className="card-top">
 
-    title,
-    subtitle,
-    value,
-    variant,
-    color
+        <div
+          className="card-icon"
+          style={{
+            color: borderColor,
+          }}
+        >
+          {icon}
+        </div>
 
-}){
+        <div className="card-info">
 
-    return(
+          <h3>{title}</h3>
 
-        <div className={`card ${color}`}>
-
-            <div className="card-title">
-
-                {title}
-
+          {type === "status" ? (
+            <div className="live-row">
+              <span>LIVE</span>
+              <div className="live-dot"></div>
             </div>
-
-            {
-
-                variant==="status"
-
-                ?
-
-                <div className="live">
-
-                    {subtitle}
-
-                </div>
-
-                :
-
-                <>
-
-                    <div className="number">
-
-                        {value}
-
-                    </div>
-
-                    <div className="subtitle">
-
-                        {subtitle}
-
-                    </div>
-
-                </>
-
-            }
+          ) : (
+            <>
+              <h1>{value}</h1>
+              <p>{subtitle}</p>
+            </>
+          )}
 
         </div>
 
-    );
-
+      </div>
+    </div>
+  );
 }
 
 export default Card;

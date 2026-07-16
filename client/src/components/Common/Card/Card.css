@@ -1,75 +1,91 @@
 .card{
 
-    background:#10131D;
-
-    border-radius:20px;
-
-    padding:22px;
-
     border:2px solid;
 
+    border-radius:22px;
+
+    padding:18px;
+
+    transition:.25s;
+
 }
 
-.card-title{
+.card-top{
 
-    font-size:24px;
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.card-icon{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:54px;
+
+    height:54px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.05);
+
+}
+
+.card-info h3{
+
+    font-size:1.45rem;
 
     font-weight:700;
 
-    color:white;
+}
+
+.card-info h1{
+
+    font-size:3rem;
+
+    margin-top:2px;
 
 }
 
-.live{
+.card-info p{
 
-    color:#2EE45A;
+    color:#AEB4C2;
 
-    margin-top:12px;
+}
 
-    font-size:18px;
+.live-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:6px;
+
+    color:#2CE45B;
 
     font-weight:700;
 
 }
 
-.number{
+.live-dot{
 
-    font-size:52px;
+    width:10px;
 
-    font-weight:700;
+    height:10px;
 
-    color:white;
+    border-radius:50%;
 
-    margin-top:10px;
+    background:#2CE45B;
 
-}
-
-.subtitle{
-
-    color:#BFC3CF;
-
-}
-
-.purple{
-
-    border-color:#9146FF;
-
-}
-
-.red{
-
-    border-color:#FF2A2A;
-
-}
-
-.green{
-
-    border-color:#35E45A;
-
-}
-
-.yellow{
-
-    border-color:#F5A400;
+    box-shadow:0 0 8px #2CE45B;
 
 }

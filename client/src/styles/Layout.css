@@ -1,21 +1,29 @@
 .app{
 
-    min-height:100vh;
+display:flex;
 
-    background:var(--bg);
+justify-content:center;
 
-    display:flex;
+min-height:100vh;
 
-    justify-content:center;
+background:var(--bg);
 
 }
 
 .container{
 
-    width:100%;
+width:100%;
 
-    max-width:430px;
+max-width:430px;
 
-    padding:20px;
+padding:18px;
+
+}
+
+.grid{
+
+display:grid;
+
+gap:16px;
 
 }

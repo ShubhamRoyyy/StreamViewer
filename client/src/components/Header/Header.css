@@ -1,0 +1,33 @@
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.title{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:white;
+
+}
+
+.connected{
+
+    background:#12311F;
+
+    color:#3AE56A;
+
+    padding:10px 16px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+}

@@ -1,0 +1,75 @@
+.card{
+
+    background:#10131D;
+
+    border-radius:20px;
+
+    padding:22px;
+
+    border:2px solid;
+
+}
+
+.card-title{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:white;
+
+}
+
+.live{
+
+    color:#2EE45A;
+
+    margin-top:12px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+}
+
+.number{
+
+    font-size:52px;
+
+    font-weight:700;
+
+    color:white;
+
+    margin-top:10px;
+
+}
+
+.subtitle{
+
+    color:#BFC3CF;
+
+}
+
+.purple{
+
+    border-color:#9146FF;
+
+}
+
+.red{
+
+    border-color:#FF2A2A;
+
+}
+
+.green{
+
+    border-color:#35E45A;
+
+}
+
+.yellow{
+
+    border-color:#F5A400;
+
+}

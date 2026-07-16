@@ -1,0 +1,77 @@
+.app {
+
+    min-height:100vh;
+
+    background:#07080D;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.container{
+
+    width:100%;
+
+    max-width:430px;
+
+    padding:20px;
+
+}
+
+.status-grid{
+
+    display:grid;
+
+    gap:16px;
+
+    margin-top:18px;
+
+}
+
+.viewer-grid{
+
+    display:grid;
+
+    gap:16px;
+
+    margin-top:16px;
+
+}
+
+.placeholder{
+
+    background:#10131D;
+
+    border:1px solid #252A38;
+
+    border-radius:20px;
+
+    margin-top:18px;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.chat{
+
+    height:420px;
+
+}
+
+.alerts{
+
+    height:150px;
+
+}

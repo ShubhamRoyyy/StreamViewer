@@ -2,69 +2,79 @@
 
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr 1fr;
 
     gap:12px;
 
-    margin-bottom:16px;
+    margin-bottom:8px;
 
 }
 
 .status-card{
 
-    height:72px;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:16px;
+
+    border-radius:18px;
+
+    border:1px solid #31384a;
+
+    background:#171b27;
+
+    transition:.25s;
+
+}
+
+.status-left{
 
     display:flex;
 
     align-items:center;
 
-    gap:12px;
-
-    padding:14px;
-
-    border-radius:20px;
-
-    border:2px solid;
-
-    transition:.3s ease;
+    gap:10px;
 
 }
-
-/* ========================= */
 
 .status-icon{
 
-    width:30px;
+    width:22px;
 
-    height:30px;
-
-    object-fit:contain;
+    height:22px;
 
 }
 
-/* ========================= */
-
-.status-content{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:8px;
-
-}
-
-.status-content h3{
-
-    font-size:18px;
-
-    font-weight:700;
+.status-left h3{
 
     margin:0;
 
+    font-size:22px;
+
+    font-weight:700;
+
+    color:white;
+
 }
 
-/* ========================= */
+.status-card.twitch.live{
+
+    border-color:#9146FF;
+
+    box-shadow:0 0 18px rgba(145,70,255,.35);
+
+}
+
+.status-card.youtube.live{
+
+    border-color:#ff3030;
+
+    box-shadow:0 0 18px rgba(255,48,48,.35);
+
+}
 
 .live-pill{
 
@@ -74,112 +84,52 @@
 
     gap:6px;
 
-    width:max-content;
-
-    padding:3px 10px;
+    padding:6px 12px;
 
     border-radius:999px;
 
-    font-size:11px;
+    font-size:12px;
 
     font-weight:700;
 
+}
+
+.live-pill.purple{
+
+    background:#9146FF;
+
     color:white;
 
-    transition:.3s;
+    box-shadow:0 0 12px rgba(145,70,255,.5);
+
+}
+
+.live-pill.red{
+
+    background:#ff0000;
+
+    color:white;
+
+    box-shadow:0 0 12px rgba(255,0,0,.5);
+
+}
+
+.live-pill.offline{
+
+    background:#555;
+
+    color:white;
 
 }
 
 .live-dot{
 
-    width:7px;
+    width:6px;
 
-    height:7px;
+    height:6px;
 
     border-radius:50%;
 
-}
-
-/* ========================= */
-
-.purple{
-
-    background:#9146FF;
-
-    box-shadow:
-        0 0 10px #9146FF;
-
-}
-
-.purple .live-dot{
-
     background:white;
-
-}
-
-.red{
-
-    background:#FF0000;
-
-    box-shadow:
-        0 0 10px #FF0000;
-
-}
-
-.red .live-dot{
-
-    background:white;
-
-}
-
-.offline{
-
-    background:#555;
-
-    box-shadow:none;
-
-}
-
-.offline .live-dot{
-
-    background:#BFBFBF;
-
-}
-
-/* ========================= */
-
-.twitch{
-
-    background:#121426;
-
-    border-color:#9146FF66;
-
-}
-
-.youtube{
-
-    background:#241214;
-
-    border-color:#FF2A2A66;
-
-}
-
-/* ========================= */
-
-.twitch.live{
-
-    border-color:#9146FF;
-
-    box-shadow:
-        0 0 20px rgba(145,70,255,.25);
-
-}
-
-.youtube.live{
-
-    border-color:#FF2A2A;
-
-    box-shadow:
-        0 0 20px rgba(255,0,0,.18);
 
 }

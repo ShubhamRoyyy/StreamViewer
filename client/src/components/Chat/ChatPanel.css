@@ -1,6 +1,6 @@
 .chat-panel{
 
-    height:420px;
+    height:700px;
 
     background:#11131D;
 
@@ -14,7 +14,7 @@
 
     flex-direction:column;
 
-    margin-bottom:18px;
+    margin-bottom:8px;
 
 }
 

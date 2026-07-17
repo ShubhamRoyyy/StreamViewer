@@ -1,10 +1,11 @@
 import "./ChatPanel.css";
 
-import { useStream } from "../../store/streamStore.jsx";
 import ChatMessage from "./ChatMessage";
 
+import useStreamStore from "../../store/streamStore";
+
 function ChatPanel() {
-  const { streamData } = useStream();
+  const chat = useStreamStore((state) => state.chat);
 
   return (
     <section className="chat-panel">
@@ -15,12 +16,12 @@ function ChatPanel() {
 
         <div className="merged-feed">
           👥 Merged Feed
-          <span>{streamData.chat.length}</span>
+          <span>{chat.length}</span>
         </div>
       </div>
 
       <div className="chat-body">
-        {streamData.chat.map((message) => (
+        {chat.map((message) => (
           <ChatMessage
             key={message.id}
             message={message}

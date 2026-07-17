@@ -2,47 +2,51 @@ import "./StatusGrid.css";
 
 import twitchIcon from "../../assets/icons/twitch.png";
 import youtubeIcon from "../../assets/icons/youtube.png";
-import { useStream } from "../../store/streamStore.jsx";
+
+import useStreamStore from "../../store/streamStore";
 
 function StatusGrid() {
-  const { streamData } = useStream();
+  const twitchLive = useStreamStore(
+    (state) => state.twitchLive
+  );
 
-  const twitchLive = streamData.twitchLive;
-  const youtubeLive = streamData.youtubeLive;
+  const youtubeLive = useStreamStore(
+    (state) => state.youtubeLive
+  );
 
   return (
     <section className="status-grid">
       <div className={`status-card twitch ${twitchLive ? "live" : ""}`}>
-        <img
-          src={twitchIcon}
-          alt="Twitch"
-          className="status-icon"
-        />
+        <div className="status-left">
+          <img
+            src={twitchIcon}
+            alt="Twitch"
+            className="status-icon"
+          />
 
-        <div className="status-content">
           <h3>Twitch</h3>
+        </div>
 
-          <div className={`live-pill ${twitchLive ? "purple" : "offline"}`}>
-            <span className="live-dot"></span>
-            {twitchLive ? "LIVE" : "OFFLINE"}
-          </div>
+        <div className={`live-pill ${twitchLive ? "purple" : "offline"}`}>
+          <span className="live-dot"></span>
+          {twitchLive ? "LIVE" : "OFFLINE"}
         </div>
       </div>
 
       <div className={`status-card youtube ${youtubeLive ? "live" : ""}`}>
-        <img
-          src={youtubeIcon}
-          alt="YouTube"
-          className="status-icon"
-        />
+        <div className="status-left">
+          <img
+            src={youtubeIcon}
+            alt="YouTube"
+            className="status-icon"
+          />
 
-        <div className="status-content">
           <h3>YouTube</h3>
+        </div>
 
-          <div className={`live-pill ${youtubeLive ? "red" : "offline"}`}>
-            <span className="live-dot"></span>
-            {youtubeLive ? "LIVE" : "OFFLINE"}
-          </div>
+        <div className={`live-pill ${youtubeLive ? "red" : "offline"}`}>
+          <span className="live-dot"></span>
+          {youtubeLive ? "LIVE" : "OFFLINE"}
         </div>
       </div>
     </section>

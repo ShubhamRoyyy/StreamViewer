@@ -4,57 +4,43 @@ import twitchIcon from "../../assets/icons/twitch.png";
 import youtubeIcon from "../../assets/icons/youtube.png";
 import shortsIcon from "../../assets/icons/youtube-shorts.png";
 
-import { useStream } from "../../store/streamStore.jsx";
+import useStreamStore from "../../store/streamStore";
 
 function ViewerGrid() {
-  const { streamData } = useStream();
-
-  const twitchViewers = streamData.viewers.twitch;
-  const youtubeViewers = streamData.viewers.youtube;
-  const shortsViewers = streamData.viewers.shorts;
+  const viewers = useStreamStore((state) => state.viewers);
 
   return (
     <section className="viewer-grid">
       <div className="viewer-card">
-        <img
-          src={twitchIcon}
-          alt="Twitch"
-          className="viewer-icon"
-        />
+        <div className="viewer-left">
+          <img src={twitchIcon} alt="Twitch" className="viewer-icon" />
+          <span className="viewer-platform">TW</span>
+        </div>
 
-        <span className="viewer-platform">TW</span>
-
-        <h2>{twitchViewers}</h2>
-
-        <p>Viewers</p>
+        <span className="viewer-count">{viewers.twitch}</span>
       </div>
 
       <div className="viewer-card">
-        <img
-          src={youtubeIcon}
-          alt="YouTube"
-          className="viewer-icon"
-        />
+        <div className="viewer-left">
+          <img src={youtubeIcon} alt="YouTube" className="viewer-icon" />
+          <span className="viewer-platform">YT</span>
+        </div>
 
-        <span className="viewer-platform">YT</span>
-
-        <h2>{youtubeViewers}</h2>
-
-        <p>Viewers</p>
+        <span className="viewer-count">{viewers.youtube}</span>
       </div>
 
       <div className="viewer-card">
-        <img
-          src={shortsIcon}
-          alt="Shorts"
-          className="viewer-icon"
-        />
+        <div className="viewer-left">
+          <img
+            src={shortsIcon}
+            alt="YouTube Shorts"
+            className="viewer-icon"
+          />
 
-        <span className="viewer-platform">YS</span>
+          <span className="viewer-platform">YS</span>
+        </div>
 
-        <h2>{shortsViewers}</h2>
-
-        <p>Viewers</p>
+        <span className="viewer-count">{viewers.shorts}</span>
       </div>
     </section>
   );

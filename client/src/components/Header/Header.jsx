@@ -1,22 +1,23 @@
 import "./Header.css";
 import { Gamepad2, Settings } from "lucide-react";
-import { useStream } from "../../store/streamStore.jsx";
+
+import useStreamStore from "../../store/streamStore";
 
 function Header() {
-  const { streamData } = useStream();
-
-  const serverConnected = streamData.serverConnected;
+  const serverConnected = useStreamStore(
+    (state) => state.serverConnected
+  );
 
   return (
     <header className="header">
       <div className="header-left">
         <div className="logo-box">
-          <Gamepad2 size={26} strokeWidth={2.2} />
+          <Gamepad2 size={24} strokeWidth={2.2} />
         </div>
 
-        <div className="title-group">
-          <h2>Stream Companion</h2>
-        </div>
+        <h1 className="header-title">
+          Stream Companion
+        </h1>
       </div>
 
       <div className="header-right">
@@ -26,6 +27,7 @@ function Header() {
           }`}
         >
           <span className="status-dot"></span>
+
           {serverConnected ? "Connected" : "Offline"}
         </div>
 

@@ -1,12 +1,12 @@
 .app{
 
+min-height:100vh;
+
+background:#07080D;
+
 display:flex;
 
 justify-content:center;
-
-min-height:100vh;
-
-background:var(--bg);
 
 }
 
@@ -14,16 +14,20 @@ background:var(--bg);
 
 width:100%;
 
-max-width:430px;
+max-width:480px;
 
-padding:18px;
+padding:5px;
 
 }
 
-.grid{
+@media(min-width:431px){
 
-display:grid;
+.container{
 
-gap:16px;
+border-left:1px solid #1B1E27;
+
+border-right:1px solid #1B1E27;
+
+}
 
 }

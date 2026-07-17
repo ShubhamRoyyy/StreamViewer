@@ -1,0 +1,23 @@
+.alerts-panel{
+
+height:170px;
+
+background:#11131D;
+
+border-radius:22px;
+
+border:1px solid #292E3A;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:22px;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+}

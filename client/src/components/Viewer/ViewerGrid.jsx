@@ -1,33 +1,63 @@
 import "./ViewerGrid.css";
 
+import twitchIcon from "../../assets/icons/twitch.png";
+import youtubeIcon from "../../assets/icons/youtube.png";
+import shortsIcon from "../../assets/icons/youtube-shorts.png";
+
+import { useStream } from "../../store/streamStore.jsx";
+
 function ViewerGrid() {
+  const { streamData } = useStream();
 
-    return(
+  const twitchViewers = streamData.viewers.twitch;
+  const youtubeViewers = streamData.viewers.youtube;
+  const shortsViewers = streamData.viewers.shorts;
 
-        <section className="viewer-grid">
+  return (
+    <section className="viewer-grid">
+      <div className="viewer-card">
+        <img
+          src={twitchIcon}
+          alt="Twitch"
+          className="viewer-icon"
+        />
 
-            <div className="viewer-card">
+        <span className="viewer-platform">TW</span>
 
-                TW
+        <h2>{twitchViewers}</h2>
 
-            </div>
+        <p>Viewers</p>
+      </div>
 
-            <div className="viewer-card">
+      <div className="viewer-card">
+        <img
+          src={youtubeIcon}
+          alt="YouTube"
+          className="viewer-icon"
+        />
 
-                YT
+        <span className="viewer-platform">YT</span>
 
-            </div>
+        <h2>{youtubeViewers}</h2>
 
-            <div className="viewer-card">
+        <p>Viewers</p>
+      </div>
 
-                YS
+      <div className="viewer-card">
+        <img
+          src={shortsIcon}
+          alt="Shorts"
+          className="viewer-icon"
+        />
 
-            </div>
+        <span className="viewer-platform">YS</span>
 
-        </section>
+        <h2>{shortsViewers}</h2>
 
-    );
-
+        <p>Viewers</p>
+      </div>
+    </section>
+  );
 }
 
 export default ViewerGrid;

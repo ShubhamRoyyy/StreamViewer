@@ -1,9 +1,11 @@
 import "./Header.css";
 import { Gamepad2, Settings } from "lucide-react";
+import { useStream } from "../../store/streamStore.jsx";
 
 function Header() {
-  // Change this later from backend
-  const serverConnected = true;
+  const { streamData } = useStream();
+
+  const serverConnected = streamData.serverConnected;
 
   return (
     <header className="header">

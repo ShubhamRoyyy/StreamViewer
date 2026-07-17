@@ -1,0 +1,59 @@
+.chat-message{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    font-size:15px;
+
+    line-height:1.5;
+
+}
+
+.chat-platform-icon{
+
+    width:18px;
+
+    height:18px;
+
+    margin-top:2px;
+
+    flex-shrink:0;
+
+}
+
+.chat-username{
+
+    font-weight:700;
+
+    flex-shrink:0;
+
+}
+
+.chat-username.twitch{
+
+    color:#9146FF;
+
+}
+
+.chat-username.youtube{
+
+    color:#FF4040;
+
+}
+
+.chat-username.shorts{
+
+    color:#FF9900;
+
+}
+
+.chat-text{
+
+    color:#ECECEC;
+
+    word-break:break-word;
+
+}

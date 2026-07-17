@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 const useStreamStore = create((set) => ({
-  serverConnected: true,
+  serverConnected: false,
 
   twitchLive: true,
   youtubeLive: true,

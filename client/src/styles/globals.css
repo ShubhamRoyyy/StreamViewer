@@ -1,51 +1,50 @@
-*{
+*,
+*::before,
+*::after {
 
-    margin:1px;
+    box-sizing: border-box;
 
-    padding: 1px;
+    margin: 0;
 
-    box-sizing:border-box;
+    padding: 0;
 
 }
 
 html,
 body,
-#root{
+#root {
 
-    width:100%;
+    width: 100%;
 
-    min-height:100%;
+    min-height: 100%;
 
 }
 
-body{
+body {
 
-    background:var(--bg);
+    background: var(--bg);
 
-    color:var(--text);
+    color: var(--text);
 
     font-family:
-
         Inter,
-
         Arial,
-
         sans-serif;
 
 }
 
-button{
+button {
 
-    cursor:pointer;
+    cursor: pointer;
 
-    font-family:inherit;
+    font: inherit;
 
 }
 
-img{
+img {
 
-    display:block;
+    display: block;
 
-    max-width:100%;
+    max-width: 100%;
 
 }

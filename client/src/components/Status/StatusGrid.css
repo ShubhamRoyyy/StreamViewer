@@ -1,135 +1,135 @@
-.status-grid{
+    .status-grid{
 
-    display:grid;
+        display:grid;
 
-    grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr 1fr;
 
-    gap:12px;
+        gap:12px;
 
-    margin-bottom:8px;
+        margin-bottom:8px;
 
-}
+    }
 
-.status-card{
+    .status-card{
 
-    display:flex;
+        display:flex;
 
-    align-items:center;
+        align-items:center;
 
-    justify-content:space-between;
+        justify-content:space-between;
 
-    padding:16px;
+        padding:10px;
 
-    border-radius:18px;
+        border-radius:18px;
 
-    border:1px solid #31384a;
+        border:1px solid #31384a;
 
-    background:#171b27;
+        background:#171b27;
 
-    transition:.25s;
+        transition:.25s;
 
-}
+    }
 
-.status-left{
+    .status-left{
 
-    display:flex;
+        display:flex;
 
-    align-items:center;
+        align-items:center;
 
-    gap:10px;
+        gap:5px;
 
-}
+    }
 
-.status-icon{
+    .status-icon{
 
-    width:22px;
+        width:25px;
 
-    height:22px;
+        height:25px;
 
-}
+    }
 
-.status-left h3{
+    .status-left h3{
 
-    margin:0;
+        margin:0;
 
-    font-size:22px;
+        font-size:18px;
 
-    font-weight:700;
+        font-weight:700;
 
-    color:white;
+        color:white;
 
-}
+    }
 
-.status-card.twitch.live{
+    .status-card.twitch.live{
 
-    border-color:#9146FF;
+        border-color:#9146FF;
 
-    box-shadow:0 0 18px rgba(145,70,255,.35);
+        box-shadow:0 0 40px rgba(145,70,255,.35);
 
-}
+    }
 
-.status-card.youtube.live{
+    .status-card.youtube.live{
 
-    border-color:#ff3030;
+        border-color:#ff3030;
 
-    box-shadow:0 0 18px rgba(255,48,48,.35);
+        box-shadow:0 0 40px rgba(255,48,48,.35);
 
-}
+    }
 
-.live-pill{
+    .live-pill{
 
-    display:flex;
+        display:flex;
 
-    align-items:center;
+        align-items:center;
 
-    gap:6px;
+        gap:6px;
 
-    padding:6px 12px;
+        padding:6px 12px;
 
-    border-radius:999px;
+        border-radius:999px;
 
-    font-size:12px;
+        font-size:12px;
 
-    font-weight:700;
+        font-weight:700;
 
-}
+    }
 
-.live-pill.purple{
+    .live-pill.purple{
 
-    background:#9146FF;
+        background:#9146FF;
 
-    color:white;
+        color:white;
 
-    box-shadow:0 0 12px rgba(145,70,255,.5);
+        box-shadow:0 0 12px rgba(145,70,255,.5);
 
-}
+    }
 
-.live-pill.red{
+    .live-pill.red{
 
-    background:#ff0000;
+        background:#ff0000;
 
-    color:white;
+        color:white;
 
-    box-shadow:0 0 12px rgba(255,0,0,.5);
+        box-shadow:0 0 12px rgba(255,0,0,.5);
 
-}
+    }
 
-.live-pill.offline{
+    .live-pill.offline{
 
-    background:#555;
+        background:#555;
 
-    color:white;
+        color:white;
 
-}
+    }
 
-.live-dot{
+    .live-dot{
 
-    width:6px;
+        width:6px;
 
-    height:6px;
+        height:6px;
 
-    border-radius:50%;
+        border-radius:50%;
 
-    background:white;
+        background:white;
 
-}
+    }

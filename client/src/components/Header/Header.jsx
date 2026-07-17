@@ -4,8 +4,8 @@ import { Gamepad2, Settings } from "lucide-react";
 import useStreamStore from "../../store/streamStore";
 
 function Header() {
-  const serverConnected = useStreamStore(
-    (state) => state.serverConnected
+  const connected = useStreamStore(
+    (state) => state.connected
   );
 
   return (
@@ -23,12 +23,12 @@ function Header() {
       <div className="header-right">
         <div
           className={`header-status ${
-            serverConnected ? "online" : "offline"
+            connected ? "online" : "offline"
           }`}
         >
           <span className="status-dot"></span>
 
-          {serverConnected ? "Connected" : "Offline"}
+          {connected ? "Connected" : "Offline"}
         </div>
 
         <button className="icon-button">

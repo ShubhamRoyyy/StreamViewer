@@ -1,55 +1,41 @@
 import { create } from "zustand";
 
-const useStreamStore = create((set) => ({
-  serverConnected: false,
+const MAX_CHAT_MESSAGES = 100;
+const MAX_ALERTS = 50;
 
-  twitchLive: true,
-  youtubeLive: true,
+const useStreamStore = create((set) => ({
+  connected: false,
 
   viewers: {
-    twitch: 18,
-    youtube: 42,
-    shorts: 91,
+    twitch: 0,
+    youtube: 0,
+    shorts: 0,
   },
 
-  chat: [
-    {
-      id: 1,
-      platform: "twitch",
-      username: "Alex",
-      message: "Nice shot!",
-    },
-    {
-      id: 2,
-      platform: "youtube",
-      username: "Rahul",
-      message: "GG!",
-    },
-    {
-      id: 3,
-      platform: "shorts",
-      username: "Emma",
-      message: "LOL 😂",
-    },
-  ],
+  chatMessages: [],
 
   alerts: [],
 
-  setServerConnected: (connected) =>
-    set({ serverConnected: connected }),
-
-  setTwitchLive: (live) =>
-    set({ twitchLive: live }),
-
-  setYouTubeLive: (live) =>
-    set({ youtubeLive: live }),
+  setConnected: (connected) =>
+    set({ connected }),
 
   setViewers: (viewers) =>
     set({ viewers }),
 
   addChatMessage: (message) =>
     set((state) => ({
-      chat: [...state.chat, message],
+      chatMessages: [
+        ...state.chatMessages,
+        message,
+      ].slice(-MAX_CHAT_MESSAGES),
+    })),
+
+  addAlert: (alert) =>
+    set((state) => ({
+      alerts: [
+        ...state.alerts,
+        alert,
+      ].slice(-MAX_ALERTS),
     })),
 }));
 

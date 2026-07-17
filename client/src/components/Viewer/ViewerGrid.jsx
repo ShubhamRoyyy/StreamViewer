@@ -11,25 +11,39 @@ function ViewerGrid() {
 
   return (
     <section className="viewer-grid">
-      <div className="viewer-card">
+      <div className="viewer-card twitch">
         <div className="viewer-left">
-          <img src={twitchIcon} alt="Twitch" className="viewer-icon" />
+          <img
+            src={twitchIcon}
+            alt="Twitch"
+            className="viewer-icon"
+          />
+
           <span className="viewer-platform">TW</span>
         </div>
 
-        <span className="viewer-count">{viewers.twitch}</span>
+        <span className="viewer-count">
+          {viewers.twitch}
+        </span>
       </div>
 
-      <div className="viewer-card">
+      <div className="viewer-card youtube">
         <div className="viewer-left">
-          <img src={youtubeIcon} alt="YouTube" className="viewer-icon" />
+          <img
+            src={youtubeIcon}
+            alt="YouTube"
+            className="viewer-icon"
+          />
+
           <span className="viewer-platform">YT</span>
         </div>
 
-        <span className="viewer-count">{viewers.youtube}</span>
+        <span className="viewer-count">
+          {viewers.youtube}
+        </span>
       </div>
 
-      <div className="viewer-card">
+      <div className="viewer-card shorts">
         <div className="viewer-left">
           <img
             src={shortsIcon}
@@ -40,7 +54,9 @@ function ViewerGrid() {
           <span className="viewer-platform">YS</span>
         </div>
 
-        <span className="viewer-count">{viewers.shorts}</span>
+        <span className="viewer-count">
+          {viewers.shorts}
+        </span>
       </div>
     </section>
   );

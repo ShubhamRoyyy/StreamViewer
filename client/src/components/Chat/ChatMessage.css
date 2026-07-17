@@ -1,59 +1,119 @@
-.chat-message{
-
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:10px;
-
-    font-size:15px;
-
-    line-height:1.5;
-
+.chat-message {
+    padding: 4px 0;
+    font-size: 15px;
+    line-height: 1.5;
 }
 
-.chat-platform-icon{
-
-    width:18px;
-
-    height:18px;
-
-    margin-top:2px;
-
-    flex-shrink:0;
-
+.chat-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0;
 }
 
-.chat-username{
+/* ==========================
+   Platform Icons
+========================== */
 
-    font-weight:700;
-
-    flex-shrink:0;
-
+.platform-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    margin-right: 8px;
+    flex-shrink: 0;
+    transition: filter .25s ease, transform .25s ease;
 }
 
-.chat-username.twitch{
-
-    color:#9146FF;
-
+/* Twitch Glow */
+.chat-message.twitch .platform-icon {
+    filter:
+        drop-shadow(0 0 3px rgba(145,70,255,.75))
+        drop-shadow(0 0 8px rgba(145,70,255,.45));
 }
 
-.chat-username.youtube{
-
-    color:#FF4040;
-
+/* YouTube Glow */
+.chat-message.youtube .platform-icon {
+    filter:
+        drop-shadow(0 0 3px rgba(255,48,48,.75))
+        drop-shadow(0 0 8px rgba(255,48,48,.45));
 }
 
-.chat-username.shorts{
-
-    color:#FF9900;
-
+/* Shorts Glow */
+.chat-message.shorts .platform-icon {
+    filter:
+        drop-shadow(0 0 3px rgba(255,58,95,.75))
+        drop-shadow(0 0 8px rgba(255,58,95,.45));
 }
 
-.chat-text{
+/* Slight hover effect */
+.chat-message:hover .platform-icon {
+    transform: scale(1.08);
+}
 
-    color:#ECECEC;
+/* ==========================
+   Username
+========================== */
 
-    word-break:break-word;
+.chat-username {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-right: 4px;
+}
 
+.chat-message.twitch .chat-username {
+    color: #9a72d6;
+}
+
+.chat-message.youtube .chat-username {
+    color: #FF3030;
+}
+
+.chat-message.shorts .chat-username {
+    color: #FF4F7A;
+}
+
+/* ==========================
+   Colon
+========================== */
+
+.chat-colon {
+    color: #8B8B96;
+    font-weight: 700;
+    margin: 0 6px 0 0;
+}
+
+/* ==========================
+   Message
+========================== */
+
+.chat-text {
+    color: white;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Prevent Flex stretching */
+.chat-header > * {
+    flex: 0 0 auto;
+}
+
+@keyframes platformGlow {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.platform-icon {
+    animation: platformGlow 2.5s ease-in-out infinite;
 }

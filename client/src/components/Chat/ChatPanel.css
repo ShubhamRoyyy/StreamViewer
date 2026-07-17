@@ -1,5 +1,7 @@
 .chat-panel{
 
+    position:relative;
+
     height:700px;
 
     background:#11131D;
@@ -16,7 +18,26 @@
 
     margin-bottom:8px;
 
+    overflow:visible;
+
+    z-index:1;
+
+    animation:chatGlow 3.5s ease-in-out infinite;
+
+    box-shadow:
+
+        /* Twitch (top-left) */
+        -8px -8px 24px rgba(164, 120, 230, 0.28),
+
+        /* YouTube (bottom-right) */
+        8px 8px 24px rgba(237, 63, 63, 0.25),
+
+        /* Overall subtle glow */
+        0 0 14px rgba(255,255,255,.03);
+
 }
+
+
 
 /* ======================= */
 
@@ -86,7 +107,7 @@
 
 }
 
-/* Scrollbar */
+/* ======================= */
 
 .chat-body::-webkit-scrollbar{
 
@@ -142,5 +163,45 @@
     transform:translateY(-1px);
 
     background:#7140DD;
+
+}
+
+@keyframes chatGlow{
+
+    0%{
+
+        box-shadow:
+
+            -8px -8px 22px rgba(169,112,255,.22),
+
+             8px  8px 22px rgba(255,48,48,.20),
+
+             0 0 12px rgba(255,255,255,.02);
+
+    }
+
+    50%{
+
+        box-shadow:
+
+            -10px -10px 34px rgba(169,112,255,.42),
+
+             10px  10px 34px rgba(255,48,48,.40),
+
+             0 0 18px rgba(255,255,255,.05);
+
+    }
+
+    100%{
+
+        box-shadow:
+
+            -8px -8px 22px rgba(169,112,255,.22),
+
+             8px  8px 22px rgba(255,48,48,.20),
+
+             0 0 12px rgba(255,255,255,.02);
+
+    }
 
 }

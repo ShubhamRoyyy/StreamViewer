@@ -1,33 +1,25 @@
 import "./ChatMessage.css";
 
-import twitchIcon from "../../assets/icons/twitch.png";
-import youtubeIcon from "../../assets/icons/youtube.png";
-import shortsIcon from "../../assets/icons/youtube-shorts.png";
-
-const platformIcons = {
-  twitch: twitchIcon,
-  youtube: youtubeIcon,
-  shorts: shortsIcon,
-};
+import PlatformIcon from "./PlatformIcon";
+import BadgeGroup from "./BadgeGroup";
 
 function ChatMessage({ message }) {
   return (
-    <div className="chat-message">
+    <div className={`chat-message ${message.platform}`}>
+      <div className="chat-header">
+        <PlatformIcon platform={message.platform} />
 
-      <img
-        src={platformIcons[message.platform]}
-        alt={message.platform}
-        className="chat-platform-icon"
-      />
+        <span className="chat-username">
+          <BadgeGroup badges={message.badges} />
+          {message.displayName}
+        </span>
 
-      <span className={`chat-username ${message.platform}`}>
-        {message.username}:
-      </span>
+        <span className="chat-colon">:</span>
 
-      <span className="chat-text">
-        {message.message}
-      </span>
-
+        <span className="chat-text">
+          {message.message}
+        </span>
+      </div>
     </div>
   );
 }

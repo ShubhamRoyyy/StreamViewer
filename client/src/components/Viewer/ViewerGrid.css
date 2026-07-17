@@ -4,7 +4,7 @@
 
     grid-template-columns:repeat(3,1fr);
 
-    gap:12px;
+    gap:10px;
 
     margin-bottom:8px;
 
@@ -18,7 +18,7 @@
 
     justify-content:space-between;
 
-    padding:14px 16px;
+    padding:10px 14px;
 
     background:#171b27;
 
@@ -36,13 +36,37 @@
 
 }
 
+.viewer-card.twitch{
+
+    border-color:#9146FF;
+
+    box-shadow:0 0 40px rgba(145,70,255,.35);
+
+}
+
+.viewer-card.youtube{
+
+    border-color:#ff3030;
+
+    box-shadow:0 0 40px rgba(255,48,48,.35);
+
+}
+
+.viewer-card.shorts{
+
+    border-color:#ff3030;
+
+    box-shadow:0 0 40px rgba(255,48,48,.35);
+
+}
+
 .viewer-left{
 
     display:flex;
 
     align-items:center;
 
-    gap:10px;
+    gap:1px;
 
 }
 
@@ -72,7 +96,7 @@
 
     color:#ffffff;
 
-    font-size:28px;
+    font-size:20px;
 
     font-weight:800;
 

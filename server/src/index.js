@@ -4,7 +4,7 @@ import cors from "cors";
 import { Server } from "socket.io";
 
 import registerSocket from "./socket/socket.js";
-import startFakeEvents from "./events/fakeEvents.js";
+import { startProviders } from "./managers/providerManager.js";
 
 const app = express();
 
@@ -24,18 +24,18 @@ const io = new Server(server, {
 });
 
 app.get("/", (req, res) => {
-    res.json({
-        status: "Stream Companion Backend Running"
-    });
+  res.json({
+    status: "StreamViewer Backend Running",
+  });
 });
 
 registerSocket(io);
 
-// Start one global event producer
-startFakeEvents(io);
+// Start all enabled providers
+startProviders(io);
 
 const PORT = 3001;
 
 server.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 });

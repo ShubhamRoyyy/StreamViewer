@@ -1,7 +1,3 @@
-import { broadcastViewers } from "../handlers/viewerHandler.js";
-import { broadcastChat } from "../handlers/chatHandler.js";
-import { broadcastAlert } from "../handlers/alertHandler.js";
-
 const users = [
   {
     username: "alex",
@@ -116,10 +112,6 @@ const shortsMessages = [
   "Clipped!",
 ];
 
-/* ==========================
-   Fake Alert Templates
-========================== */
-
 const alertUsers = [
   "Alex",
   "Emma",
@@ -145,23 +137,23 @@ const youtubeAlerts = [
   { type: "supersticker" },
 ];
 
-const shortsAlerts = [
-  { type: "subscribe" },
-];
+const shortsAlerts = [{ type: "subscribe" }];
 
 function randomItem(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
-/* ==========================
-   Chat Simulator
-========================== */
-
-function startPlatformChat(io, platform, messages, minDelay, maxDelay) {
+function startPlatformChat(
+  streamManager,
+  platform,
+  messages,
+  minDelay,
+  maxDelay
+) {
   const sendMessage = () => {
     const user = randomItem(users);
 
-    broadcastChat(io, {
+    streamManager.sendChat({
       id: crypto.randomUUID(),
       platform,
       username: user.username,
@@ -181,23 +173,21 @@ function startPlatformChat(io, platform, messages, minDelay, maxDelay) {
   sendMessage();
 }
 
-/* ==========================
-   Alert Simulator
-========================== */
-
-function startPlatformAlerts(io, platform, alerts, minDelay, maxDelay) {
+function startPlatformAlerts(
+  streamManager,
+  platform,
+  alerts,
+  minDelay,
+  maxDelay
+) {
   const sendAlert = () => {
     const template = randomItem(alerts);
 
-    broadcastAlert(io, {
+    streamManager.sendAlert({
       id: crypto.randomUUID(),
-
       platform,
-
       username: randomItem(alertUsers),
-
       timestamp: Date.now(),
-
       ...template,
     });
 
@@ -210,14 +200,12 @@ function startPlatformAlerts(io, platform, alerts, minDelay, maxDelay) {
   sendAlert();
 }
 
-export default function startFakeEvents(io) {
+export default function startFakeProvider(streamManager) {
   let viewers = {
     twitch: 18,
     youtube: 42,
     shorts: 91,
   };
-
-  /* Viewer Simulator */
 
   setInterval(() => {
     viewers = {
@@ -226,21 +214,35 @@ export default function startFakeEvents(io) {
       shorts: viewers.shorts + Math.floor(Math.random() * 5),
     };
 
-    broadcastViewers(io, viewers);
+    streamManager.sendViewers(viewers);
   }, 5000);
 
-  /* Chat Simulators */
+  startPlatformChat(
+    streamManager,
+    "twitch",
+    twitchMessages,
+    1200,
+    3500
+  );
 
-  startPlatformChat(io, "twitch", twitchMessages, 1200, 3500);
+  startPlatformChat(
+    streamManager,
+    "youtube",
+    youtubeMessages,
+    1800,
+    4500
+  );
 
-  startPlatformChat(io, "youtube", youtubeMessages, 1800, 4500);
-
-  startPlatformChat(io, "shorts", shortsMessages, 700, 2500);
-
-  /* Alert Simulators */
+  startPlatformChat(
+    streamManager,
+    "shorts",
+    shortsMessages,
+    700,
+    2500
+  );
 
   startPlatformAlerts(
-    io,
+    streamManager,
     "twitch",
     twitchAlerts,
     12000,
@@ -248,7 +250,7 @@ export default function startFakeEvents(io) {
   );
 
   startPlatformAlerts(
-    io,
+    streamManager,
     "youtube",
     youtubeAlerts,
     18000,
@@ -256,7 +258,7 @@ export default function startFakeEvents(io) {
   );
 
   startPlatformAlerts(
-    io,
+    streamManager,
     "shorts",
     shortsAlerts,
     20000,

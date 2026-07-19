@@ -1,8 +1,11 @@
+import "dotenv/config";
+
 import express from "express";
 import http from "http";
 import cors from "cors";
 import { Server } from "socket.io";
 
+import appConfig from "./config/app.js";
 import registerSocket from "./socket/socket.js";
 import { startProviders } from "./managers/providerManager.js";
 
@@ -15,10 +18,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: [
-      "http://localhost:5173",
-      "http://192.168.0.163:5173",
-    ],
+    origin: [appConfig.frontendUrl],
     methods: ["GET", "POST"],
   },
 });
@@ -26,16 +26,14 @@ const io = new Server(server, {
 app.get("/", (req, res) => {
   res.json({
     status: "StreamViewer Backend Running",
+    environment: appConfig.nodeEnv,
   });
 });
 
 registerSocket(io);
 
-// Start all enabled providers
 startProviders(io);
 
-const PORT = 3001;
-
-server.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+server.listen(appConfig.port, () => {
+  console.log(`🚀 Server running on http://localhost:${appConfig.port}`);
 });
